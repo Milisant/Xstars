@@ -1,10 +1,10 @@
 'use strict';
 
  var express = require('express'),
- 	exphbs = require('express-handlebars');
+ 	exphbs = require('express-handlebars'),
  	// mysql = require('mysql'),
  	// myConnection = require('express-myconnection'),
- 	// bodyParser = require('body-parser'),
+ 	 bodyParser = require('body-parser');
  	// session = require('express-session'),	 
 
 var app = express();
@@ -20,7 +20,7 @@ var app = express();
 //setup middleware
 // app.use(myConnection(mysql, dbOptions, 'single'));
 // parse application/x-www-form-urlencoded
-// app.use(bodyParser.urlencoded({ extended: false }))
+ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 // app.use(bodyParser.json())
 // app.use(session({secret: "Haha haha", saveUninitialized : false, resave: true, cookie : {maxAge : 5*60000}}));
@@ -41,6 +41,17 @@ app.use(express.static(__dirname + '/public'));
 app.get('/', function(req, res){
 	res.render('home')
 }); 
+app.post('/api/issues', function(req,res){
+	console.log(req.body);
+
+	res.send({
+		issue_id : 9
+	});
+});
+
+app.post('/api/issues/:id', function(req,res){
+	res.send("update an issue");
+});
 
 /*'/productCategories'is being used as our HTTP host name when you type eg this url name - url("http://localhost:2000/productCategories").end
  dont type "end" use text inside "quotes" then our function route  - "function res.render('productsCategories')" will work as an exception.
