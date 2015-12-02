@@ -15,6 +15,20 @@ CREATE TABLE Ranks (
 
 )ENGINE=InnoDB;
 
+
+DROP TABLE IF EXISTS 'Location';
+CREATE TABLE Location(
+	id int not null auto_increment,
+	primary key(id),
+	latitude int(100),
+	longitude int(100),
+	locOne_time datetime,
+    date DATE
+	
+)ENGINE=InnoDB;
+
+
+
 DROP TABLE IF EXISTS 'Issues';
 CREATE TABLE Issues(
 	id int not null auto_increment,
@@ -22,31 +36,28 @@ CREATE TABLE Issues(
 	description varchar(100),
 	date DATE,
 	association_id int(100),
-	FOREIGN KEY(association_id) REFERENCES Taxi_associations(id),
 	rank_id int(100),
+	start_location_id int(100),
+	end_location_id int(100),
+
+	FOREIGN KEY(start_location_id) REFERENCES Location(id),
+	FOREIGN KEY(end_location_id) REFERENCES Location(id),
+	FOREIGN KEY(association_id) REFERENCES Taxi_associations(id),
 	FOREIGN KEY(rank_id) REFERENCES Ranks(id)
+
 )ENGINE=InnoDB;
 
-DROP TABLE IF EXISTS 'ini_Location';
-CREATE TABLE ini_Location(
-	id int not null auto_increment,
-	primary key(id),
-	latitudes int(100),
-	longitudes int(100),
-	locOne_time time,
-    date DATE
+
+-- DROP TABLE IF EXISTS 'fin_Location';
+-- CREATE TABLE fin_Location(
+-- 	id int not null auto_increment,
+-- 	primary key(id),
+-- 	latitudes int(100),
+-- 	longitudes int(100),
+-- 	locTwo_time time,
+--     date DATE
 	
-)ENGINE=InnoDB;
-DROP TABLE IF EXISTS 'fin_Location';
-CREATE TABLE fin_Location(
-	id int not null auto_increment,
-	primary key(id),
-	latitudes int(100),
-	longitudes int(100),
-	locTwo_time time,
-    date DATE
-	
-)ENGINE=InnoDB;
+
 
 INSERT INTO Taxi_associations (taxiAssociation_name) VALUES ('Uncedo');
 INSERT INTO Taxi_associations (taxiAssociation_name) VALUES ('CATA');
