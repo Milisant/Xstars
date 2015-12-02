@@ -321,7 +321,7 @@ a:hover {
 /////////////////////////////////////////////////////////////////////*/
 
 #banner {
-    background: url(../img/bg.jpg);
+    background: url('http://i.imgur.com/Lj4DLLF.png');
     background-size: cover;
     padding-top: 80px;
     background-attachment: fixed;
@@ -399,7 +399,7 @@ a:hover {
 
 
 #gallery{
-    background: url(../img/gallery-bg.png) no-repeat;
+    background: url('http://www.reco.on.ca/wp-content/uploads/before-you-file-a-complaint.jpg') no-repeat;
     background-size: cover;
     background-attachment: fixed;
 }
