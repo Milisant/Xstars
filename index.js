@@ -17,21 +17,8 @@ var app = express();
 
 var dbOptions = {
       host: 'localhost',
-<<<<<<< HEAD
       user: 'root',
-<<<<<<< HEAD
-      password: 'amila',
-=======
-<<<<<<< HEAD
-      password: 'nwabisamilisantmasiko',
-=======
       password: '08386354',
->>>>>>> 3e0ae1f5deccf074b64b01727ac9c4a10932a440
-=======
-      user: 'geo',
-      password: 'password',
->>>>>>> 0d355a372fbda9aa37271c81dc74f5782df3d24b
->>>>>>> ff5b93ca4804703e95560f8c3e0c88f5c2d36def
       port: 3306,
       database: 'geo_get'
 };
@@ -67,11 +54,10 @@ app.get('/issues/delete/:Id', issues.delete);
 // app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 // app.use(bodyParser.json())
-app.get('/', issues.show); 
 
-// app.get('/', function(req, res){
-// 	res.render('home')
-// }); 
+app.get('/', function(req, res){
+	res.render('home')
+}); 
 
 app.post('/api/issues', function(req, res, next){
 	req.getConnection(function(err, connection){
