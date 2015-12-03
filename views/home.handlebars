@@ -49,9 +49,42 @@
 <canvas id="progress" width="200" height="200"></canvas>
 <!-- progress bar -->
 </div>
+<p id="demo1"></p><br />
+<p id="demo2"></p>
+
 <div class="buttons">
-  <input type="button" id="start" value="Start">
-  <input type="button" id="stop" value="Stop">
+  <input type="button" onclick="getLocation1()" id="start" value="Start">
+  <input type="button" onclick="getLocation2()" id="stop" value="Stop">
+  <script>
+    var location1 = document.getElementById("demo1");
+        function getLocation1() {
+            if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(showPosition);
+            } 
+            else { 
+                    location1.innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+            function showPosition(position) {
+                location1.innerHTML = "Latitude: " + position.coords.latitude + 
+                "<br>Longitude: " + position.coords.longitude + "<br>Time: " + Date.now();  
+            }
+        </script>
+        <script>
+    var location2 = document.getElementById("demo2");
+        function getLocation2() {
+            if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(showPosition);
+            } 
+            else { 
+                    location2.innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+            function showPosition(position) {
+                location2.innerHTML = "Latitude: " + position.coords.latitude + 
+                "<br>Longitude: " + position.coords.longitude + "<br>Time: " + Date.now();  
+            }
+        </script>
 </div>
                           <div class="question">
                             <input type="text" required/>
