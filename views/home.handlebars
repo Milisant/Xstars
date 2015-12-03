@@ -69,6 +69,58 @@
 
                           <button>Submit</button>
                 </form>
+<div>
+<h2>Issues</h2>
+<table class ="table" id = "Issues">
+    <tr>
+     <th>Id</th>
+     <th>Description</th>
+     <th>Speed</th>
+    <th>Taxi association</th>
+     <th>Taxi Rank</th>
+     <th>Date</th>
+  <!--    <th>start_location_latitude</th>  
+     <th>start_location_longitude</th> 
+     <th>start_location_time</th>
+    <th>end_location_latitude</th>
+    <th>end_location_longitude</th>
+    <th>end_location_time</th> -->
+ 
+   </tr>
+{{#issues}}
+<tr>
+  <th>{{Id}}</th>
+  <th>{{description}}</th>
+  <th>{{speed}}</th>
+  <th>{{taxiAssociation_name}}</th>
+  <th>{{Rank_name}}</th>
+  <th>{{Date}}</th>
+
+  <!-- <th>{{start_location_latitude}}  
+  <th>{{start_location_longitude}}</th> 
+  <th>{{start_location_time}}</th>
+  <th>{{end_location_latitude}}</th>
+  <th>{{end_location_longitude}}</th>
+  <th>{{start_location_longitude}}</th>
+  <th>{{start_location_longitude}}</th> -->
+  
+<td ><a href="/issues/edit/{{Id}}" class ="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Edit</a></td>
+ <td ><a href="/issues/delete/{{Id}}" class="btn btn-danger">
+    <span class="glyphicon glyphicon-remove"></span>Delete</a></td >
+</tr>
+{{/issues}}
+
+{{#no_issues}}
+  <p>No sale available yet. Add some above.</p>
+{{/no_issues}}
+
+</table>
+</div>
+
+
+
+
+
                 <!-- <div class="col-xs-12"> -->
                     <!-- div id="screenshots" class="owl-carousel owl-theme">
                       <div class="item"><img src="/img/screenshot-1.png" class="img_res wow animated zoomIn"></div>
