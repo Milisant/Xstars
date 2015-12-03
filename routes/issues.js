@@ -5,17 +5,14 @@ exports.show =function (req, res, next){
         connection.query('SELECT Issues.Id,Issues.description,Issues.speed,taxiAssociation_name,Ranks.Rank_name,DATE_FORMAT(Issues.date, "%d/%m/%Y") as Date,Issues.rank_id FROM Issues INNER JOIN Taxi_associations ON Issues.association_id = Taxi_associations.id INNER JOIN Ranks ON Issues.rank_id = Ranks.id ORDER BY Issues.date DESC',[],function(err, issues){
            // connection.query('SELECT * from Issues',[], function(err, issues){
             	if (err) return next(err);
-
-            	console.log(issues.length);
-                
+                console.log(issues.length);
                 res.render('home',{
-            	no_issues : issues.length === 0,
-                issues : issues
+                	no_issues : issues.length === 0,
+                    issues : issues
             	});
             });
         });    
-	
-}
+	}
 
 
 exports.add = function (req, res, next) {
