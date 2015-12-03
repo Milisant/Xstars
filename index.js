@@ -18,7 +18,7 @@ var app = express();
 var dbOptions = {
       host: 'localhost',
       user: 'root',
-      password: '08386354',
+      password: 'amila',
       port: 3306,
       database: 'geo_get'
 };
