@@ -19,6 +19,7 @@ var dbOptions = {
       host: 'localhost',
       user: 'geo',
       password: 'password',
+
       port: 3306,
       database: 'geo_get'
 };
