@@ -18,11 +18,7 @@ var app = express();
 var dbOptions = {
       host: 'localhost',
       user: 'root',
-<<<<<<< HEAD
-      password: 'nwabisamilisantmasiko',
-=======
       password: 'amila',
->>>>>>> 83e31e25a9db51d60efac51d91bd8dd62b3f188c
       port: 3306,
       database: 'geo_get'
 };
@@ -98,7 +94,7 @@ app.post('/api/issues', function(req, res, next){
 });
 
 
-app.post('/api/issues/:id', function(req,res,next){
+app.post('/issues/add', function(req,res,next){
 	var issue_id = req.params.id;
 	var input = req.body;
 	//update using issue_id
