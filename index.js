@@ -17,8 +17,8 @@ var app = express();
 
 var dbOptions = {
       host: 'localhost',
-      user: 'root',
-      password: '08386354',
+      user: 'geo',
+      password: 'password',
       port: 3306,
       database: 'geo_get'
 };
@@ -35,7 +35,6 @@ app.use(myConnection(mysql, dbOptions, 'single'));
   res.render('error', { error: err });
 }
 app.get('/', issues.show);
-
 // app.use(session({secret: "Haha haha", saveUninitialized : false, resave: true, cookie : {maxAge : 5*60000}}));
 // app.set("xTers-powered-by", false);
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
@@ -44,6 +43,7 @@ app.set('view engine', 'handlebars');
 
 app.use(express.static(__dirname + '/public'));
 app.get('/issues', issues.show); 
+app.get('/',issues.show)
 app.post('/issues/add',issues.add);
 app.get('/issues/edit/:Id', issues.get);
 app.post('/issues/update/:Id', issues.update);
