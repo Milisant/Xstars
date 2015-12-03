@@ -34,6 +34,7 @@ app.use(myConnection(mysql, dbOptions, 'single'));
   res.status(500);
   res.render('error', { error: err });
 }
+app.get('/', issues.show);
 // app.use(session({secret: "Haha haha", saveUninitialized : false, resave: true, cookie : {maxAge : 5*60000}}));
 // app.set("xTers-powered-by", false);
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
