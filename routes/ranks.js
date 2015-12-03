@@ -7,8 +7,8 @@ exports.show =function (req, res, next){
             	if (err) return next(err);
                 console.log(issues.length);
                 res.render('home',{
-                	no_issues : issues.length === 0,
-                    issues : ranks
+                	no_ranks : ranks.length === 0,
+                    ranks : ranks
             	});
             });
         });    
