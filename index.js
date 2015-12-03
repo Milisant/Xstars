@@ -17,17 +17,8 @@ var app = express();
 
 var dbOptions = {
       host: 'localhost',
-<<<<<<< HEAD
-      user: 'root',
-<<<<<<< HEAD
-      password: 'nwabisamilisantmasiko',
-=======
-      password: '08386354',
->>>>>>> 3e0ae1f5deccf074b64b01727ac9c4a10932a440
-=======
       user: 'geo',
       password: 'password',
->>>>>>> 0d355a372fbda9aa37271c81dc74f5782df3d24b
       port: 3306,
       database: 'geo_get'
 };
@@ -51,6 +42,7 @@ app.set('view engine', 'handlebars');
 
 app.use(express.static(__dirname + '/public'));
 app.get('/issues', issues.show); 
+app.get('/',issues.show)
 app.post('/issues/add',issues.add);
 app.get('/issues/edit/:Id', issues.get);
 app.post('/issues/update/:Id', issues.update);
