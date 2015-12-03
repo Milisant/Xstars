@@ -20,11 +20,12 @@ exports.add = function (req, res, next) {
         if (err) return next(err);
         var input = JSON.parse(JSON.stringify(req.body));
         var data = {
-            description : input.description,
-            date :input.date,
-            start_location_latitude : input.latitude,
-            start_location_longitude :input.longitude,
-            start_location_time:input.time
+            description : input.description
+            // date :input.date
+
+            // start_location_latitude : input.latitude,
+            // start_location_longitude :input.longitude,
+            // start_location_time:input.time
             
             //end_location_latitude:input.latitude,
             //end_location_longitude: input.longitudes,

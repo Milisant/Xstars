@@ -59,7 +59,11 @@
 <div class="buttons">
   <input type="button"  id="start" value="Start">
   <input type="button"  id="stop" value="Stop">
-</div>
+</div>                    
+                        <!-- <div class="question">
+                            <input type="date" required/>
+                            <label>Date</label>
+                        </div> -->
                           <div class="question">
                             <input type="text" required/>
                             <label>Taxi registration number</label>
@@ -69,9 +73,10 @@
                             <label>Rank</label>
                           </div>
                           <div class="question">
-                            <input type="text" required/>
+                            <input type="text" name"description" value="{{product_name}}"required/>
                             <label>Comment</label>
                           </div>
+                          
  
                           <div>
                           <input type="submit" class="btn btn-success" id="enter" onclick="myFunction()"> 
