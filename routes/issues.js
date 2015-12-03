@@ -26,21 +26,16 @@ exports.add = function (req, res, next) {
         var data = {
             description : input.description,
             date :input.date,
-<<<<<<< HEAD
             rank_name:input.rank_name,
             reg_number:input.reg_number,
             association_id: input.association_id,
-            rank_id:input.rank_id
+            rank_id:input.rank_id,
             //start_location_latitude : input.latitude,
             //start_location_longitude :input.longitude,
             //start_location_time:input.time
-=======
-
             start_location_latitude : input.latitude,
             start_location_longitude :input.longitude,
-            start_location_time:input.time,
->>>>>>> a00fc3dddc045eb985229ec5f19f82b0168e59a0
-            
+            start_location_time:input.time,            
             end_location_latitude:input.latitude,
             end_location_longitude: input.longitudes,
             end_location_time: input.time
