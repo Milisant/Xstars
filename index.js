@@ -94,7 +94,7 @@ app.post('/api/issues', function(req, res, next){
 });
 
 
-app.post('/api/issues/:id', function(req,res,next){
+app.post('/issues/add', function(req,res,next){
 	var issue_id = req.params.id;
 	var input = req.body;
 	//update using issue_id
