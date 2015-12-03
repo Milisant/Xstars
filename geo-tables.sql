@@ -16,16 +16,16 @@ CREATE TABLE Ranks (
 )ENGINE=InnoDB;
 
 
-DROP TABLE IF EXISTS 'Location';
-CREATE TABLE Location(
-	id int not null auto_increment,
-	primary key(id),
-	latitude int(100),
-	longitude int(100),
-	locOne_time datetime,
-    date DATE
+-- DROP TABLE IF EXISTS 'Location';
+-- CREATE TABLE Location(
+-- 	id int not null auto_increment,
+-- 	primary key(id),
+-- 	latitude int(100),
+-- 	longitude int(100),
+-- 	locOne_time datetime,
+--     date DATE
 	
-)ENGINE=InnoDB;
+-- )ENGINE=InnoDB;
 
 
 
@@ -37,11 +37,17 @@ CREATE TABLE Issues(
 	date DATE,
 	association_id int(100),
 	rank_id int(100),
-	start_location_id int(100),
-	end_location_id int(100),
+	
+	start_location_latitude decimal(20,10),
+	start_location_longitude decimal(20,10),
+	start_location_time bigint,
 
-	FOREIGN KEY(start_location_id) REFERENCES Location(id),
-	FOREIGN KEY(end_location_id) REFERENCES Location(id),
+	end_location_latitude decimal(20,10),
+	end_location_longitude decimal(20,10),
+	end_location_time bigint,
+	speed decimal(20.10),
+
+	
 	FOREIGN KEY(association_id) REFERENCES Taxi_associations(id),
 	FOREIGN KEY(rank_id) REFERENCES Ranks(id)
 
