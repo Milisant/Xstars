@@ -22,13 +22,14 @@ exports.add = function (req, res, next) {
         var data = {
             description : input.description,
             date :input.date,
+
             start_location_latitude : input.latitude,
             start_location_longitude :input.longitude,
-            start_location_time:input.time
+            start_location_time:input.time,
             
-            //end_location_latitude:input.latitude,
-            //end_location_longitude: input.longitudes,
-            //end_location_time: input.time,
+            end_location_latitude:input.latitude,
+            end_location_longitude: input.longitudes,
+            end_location_time: input.time
             //start_location_longitude : input.latitude, 
             //end_location_id : input.latitude,
             //taxiAssociation_name : input.taxiAssociation_name,
@@ -63,7 +64,7 @@ exports.get = function(req, res, next){
         connection.query('SELECT * FROM Issues WHERE Id = ?', [Id], function(err,rows){
             //connection.query('SELECT * FROM Taxi_associations', [], function(err, results) {   
                 if(err) return next(err);
-                //console.log(results);
+                console.log(results);
                 res.render('edit',{page_title:"Edit Issues - Node.js", 
                 data : rows[0],
                 //associations : results
