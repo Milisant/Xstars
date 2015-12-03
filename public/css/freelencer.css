@@ -16,8 +16,8 @@ html {
 }
 
 form {
-  opacity: .9;
-  position: relative;
+/*  opacity: .9;
+*/  position: relative;
   display: inline-block;
   max-width: 700px;
   min-width: 500px;
@@ -32,12 +32,13 @@ form {
   transform: translate(-50%, 0);
 }
 form h1 {
-  color: #ff4a56;
-  font-weight: 100;
-  letter-spacing: 0.01em;
-  margin-left: 15px;
-  margin-bottom: 35px;
-  text-transform: uppercase;
+    color: #fcf8e3;
+    /* font-weight: 100; */
+    letter-spacing: 0.01em;
+    margin-left: 15px;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+    font-weight: 800;
 }
 form button {
   margin-top: 35px;

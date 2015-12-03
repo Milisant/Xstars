@@ -471,6 +471,7 @@ a:hover {
 }
 .team-member p {
     padding: 10px 10px 15px 10px;
+    font-size: initial;
 }
 .team-member h2 {
     font-size: 25px;
