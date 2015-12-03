@@ -61,15 +61,18 @@
   <input type="button"  id="stop" value="Stop">
 </div>
                           <div class="question">
-                            <input type="text" required/>
+                            <input type="text" name="reg_number" required/>
                             <label>Taxi registration number</label>
                           </div>
+                          <input type = "hidden" value="2015-12-03" name ="date">
+                          <input type = "hidden" value="1" name ="association_id">
+                          <input type = "hidden" value="1" name ="rank_id">
                           <div class="question">
-                            <input type="text" required/>
+                            <input type="text" name="rank_name" required/>
                             <label>Rank</label>
                           </div>
                           <div class="question">
-                            <input type="text" required/>
+                            <input type="text" name="description" required/>
                             <label>Comment</label>
                           </div>
  
@@ -202,7 +205,7 @@
             </div>
         </div>
     </div>
-
+{{#ranks}}
     <div class="panel-element">
         <div class="element-actions">
             <button class="btn btn-action btn-hide"><i class="fa fa-ban"></i></button>
@@ -220,12 +223,13 @@
                 <div class="post-avatar"></div>
 
                 <div class="post-content">
-                    <span class="post-title">Lorem Ipsum Dolor Sit</span>
-                    <p class="post-body">Amet consectetur adipiscing elit vestibulum lacinia nibh id sem.</p>
+                    <span class="post-title">{{Rank_name}}</span>
+                    <p class="post-body">{{description}}</p>
                 </div>
             </div>
         </div>
-    </div>
+      </div>
+    {{/ranks}}
     
     <div class="panel-element">
         <div class="element-actions">
