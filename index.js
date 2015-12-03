@@ -54,10 +54,11 @@ app.get('/issues/delete/:Id', issues.delete);
 // app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 // app.use(bodyParser.json())
+app.get('/', issues.show); 
 
-app.get('/', function(req, res){
-	res.render('home')
-}); 
+// app.get('/', function(req, res){
+// 	res.render('home')
+// }); 
 
 app.post('/api/issues', function(req, res, next){
 	req.getConnection(function(err, connection){
