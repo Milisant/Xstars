@@ -63,7 +63,7 @@ exports.get = function(req, res, next){
         connection.query('SELECT * FROM Issues WHERE Id = ?', [Id], function(err,rows){
             //connection.query('SELECT * FROM Taxi_associations', [], function(err, results) {   
                 if(err) return next(err);
-                console.log(results);
+                //console.log(results);
                 res.render('edit',{page_title:"Edit Issues - Node.js", 
                 data : rows[0],
                 //associations : results
