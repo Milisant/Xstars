@@ -51,6 +51,9 @@ app.post('/issues/update/:Id', issues.update);
 //app.get('/issues/addSales', issues.showAdd);
 app.get('/issues/delete/:Id', issues.delete);
 
+app.get('/issues/getIssues', issues.getIssues);
+// app.get('/issues/delete/:Id', issues.delete);
+
 
 // app.use(myConnection(mysql, dbOptions, 'single'));
 // parse application/x-www-form-urlencoded

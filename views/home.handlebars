@@ -7,6 +7,7 @@
         <uls class="sidebar-nav">
             <li><a href="#gallery">Home</a></li>
             <li><a href="#gallery">Commuter</a></li>
+            <li><a href="/issues/getIssues">Trip History</a></li>
             <li><a href="#features">Rank Manager</a></li>
             <li><a href="#team">Development Team</a></li>
         </ul>
@@ -38,96 +39,59 @@
             </section>
             <section class="row">
                 <form action="/issues/add" method="post">
-                    <h1>Add new complaint</h1>
+                <h1>Add new complaint</h1>
     <div class="timer">
-    <div id="pm">
-  <input type="button" id="plus" value="&#xf0de;">
-  <input type="button" id="minus" value="&#xf0dd;">
-</div>
-<p id="result">30</p>
-<p id="sec">sec</p>
-<canvas id="progress" width="200" height="200"></canvas>
+            <div id="pm">
+          <input type="button" id="plus" value="&#xf0de;">
+          <input type="button" id="minus" value="&#xf0dd;">
+            </div>
+            <p id="result">30</p>
+        <p id="sec">sec</p>
+    <canvas id="progress" width="200" height="200"></canvas>
 <!-- progress bar -->
-</div>
-<div id = "results1">
-<p id="demo1"></p><br />
+    </div>
+        <div id = "results1">
+        <p id="demo1"></p><br/>
+        </div>
+        <div id = "results2">
+            <p id="demo2"></p>
+        </div>
+        <div class="buttons">
+          <input type="button"  id="start" value="Start">
+          <input type="button"  id="stop" value="Stop">
+        </div>                    
+          <div class="question">
+            <input type="text" name="reg_number" required/>
+            <label>Taxi registration number</label>
+          </div>
+          <input type = "hidden" value="2015-12-03" name ="date">
+          <input type = "hidden" value="1" name ="association_id">
+          <input type = "hidden" value="1" name ="rank_id" >
 
-</div>
-<div id = "results2">
-    <p id="demo2"></p>
-</div>
-<div class="buttons">
-  <input type="button"  id="start" value="Start">
-  <input type="button"  id="stop" value="Stop">
-</div>                    
-                        <!-- <div class="question">
-                            <input type="date" required/>
-                            <label>Date</label>
-                        </div> -->
-                          <div class="question">
-                            <input type="text" name="reg_number" required/>
-                            <label>Taxi registration number</label>
-                          </div>
-                          <input type = "hidden" value="2015-12-03" name ="date">
-                          <input type = "hidden" value="1" name ="association_id">
-                          <input type = "hidden" value="1" name ="rank_id">
-                          <div class="question">
-                            <input type="text" name="rank_name" required/>
-                            <label>Rank</label>
-                          </div>
-                          <div class="question">
-<<<<<<< HEAD
-                            <input type="text" name="description" required/>
-=======
-                            <input type="text" name"description" value="{{product_name}}"required/>
->>>>>>> a00fc3dddc045eb985229ec5f19f82b0168e59a0
-                            <label>Comment</label>
-                          </div>
-                          
- 
-                          <div>
-                          <input type="submit" class="btn btn-success" id="enter" onclick="myFunction()"> 
-                      </div>
+          <div class="question">
+            <input type="text" name="description" required/>
+            <input type="text" name"description" value="{{description}}"required/>
+            <label>description</label>
+          </div>
+            
+            <div class="dropdown-button">
+            <p>Select Rank Name</p> 
+              <select name="id" class="description">
+                {{#rank_specification}}
+                <option value = "{{id}}">{{Rank_name}}</option>
+                {{/rank_specification}}
+              </select> 
+            </div> 
+
+          <div class="question">
+            <input type="text" name="description" required/>
+            <input type="text" name"description" value="{{product_name}}"required/>
+            <label>Comment</label>
+          </div>
+        <div>
+        <input type="submit" class="btn btn-success" id="enter" onclick="myFunction()"> 
+        </div>
                 </form>
-<div>
-<h2>Issues</h2>
-<table class ="table" id = "Issues">
-
-     <th>Id</th>
-     <th>Description</th>
-     <th>Speed(km/h)</th>
-     <th>Taxi association</th>
-     <th>Taxi Rank</th>
-     <th>Date</th>
-  
- 
-{{#issues}}
-<tr>
-      <td>{{Id}}</td>
-      <td>{{description}}</td>
-      <td>{{speed}}</td>
-      <td>{{taxiAssociation_name}}</td>
-      <td>{{Rank_name}}</td>
-      <td>{{Date}}</td>
-
-     
-     <td ><a href="/issues/edit/{{Id}}" class ="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Edit</a></td>
-     <td ><a href="/issues/delete/{{Id}}" class="btn btn-danger">
-        <span class="glyphicon glyphicon-remove"></span>Delete</a></td >
-    </tr>
-{{/issues}}
-
-{{#no_issues}}
-  <p>No issue available yet. Add some above.</p>
-{{/no_issues}}
-
-</table>
-</div>
-
-
-
-
-
                 <!-- <div class="col-xs-12"> -->
                     <!-- div id="screenshots" class="owl-carousel owl-theme">
                       <div class="item"><img src="/img/screenshot-1.png" class="img_res wow animated zoomIn"></div>
@@ -165,73 +129,22 @@
                 <span class="bb-bottom-right"></span>
                 </h1></div>
             </section>
-            
             <section class="row">
           <div class="panel">
+    {{#ranks}}
     <div class="panel-element">
         <div class="element-actions">
             <button class="btn btn-action btn-hide"><i class="fa fa-ban"></i></button>
             <button class="btn btn-action btn-heart"><i class="fa fa-heart-o"></i></button>
         </div>
-        
         <div class="element-content">
-            <button class="btn btn-more">
-                <i class="fa fa fa-reply icon-closed"></i>
-                <i class="fa fa-times icon-open"></i>
-                <i class="fa fa-heart-o icon-hearted"></i>
-            </button>
-            
+                <button class="btn btn-more">
+                    <i class="fa fa fa-reply icon-closed"></i>
+                    <i class="fa fa-times icon-open"></i>
+                    <i class="fa fa-heart-o icon-hearted"></i>
+                </button>
             <div class="content-post">
                 <div class="post-avatar"></div>
-
-                <div class="post-content">
-                    <span class="post-title">Lorem Ipsum Dolor Sit</span>
-                    <p class="post-body">Amet consectetur adipiscing elit vestibulum lacinia nibh id sem.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="panel-element">
-        <div class="element-actions">
-            <button class="btn btn-action btn-hide"><i class="fa fa-ban"></i></button>
-            <button class="btn btn-action btn-heart"><i class="fa fa-heart-o"></i></button>
-        </div>
-        
-        <div class="element-content">
-            <button class="btn btn-more">
-                <i class="fa fa fa-reply icon-closed"></i>
-                <i class="fa fa-times icon-open"></i>
-                <i class="fa fa-heart-o icon-hearted"></i>
-            </button>
-            
-            <div class="content-post">
-                <div class="post-avatar"></div>
-
-                <div class="post-content">
-                    <span class="post-title">Nullam egestas neque et</span>
-                    <p class="post-body">orci lacinia finibus. Nunc rutrum urna at libero pretium, vel gravid.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-{{#ranks}}
-    <div class="panel-element">
-        <div class="element-actions">
-            <button class="btn btn-action btn-hide"><i class="fa fa-ban"></i></button>
-            <button class="btn btn-action btn-heart"><i class="fa fa-heart-o"></i></button>
-        </div>
-        
-        <div class="element-content">
-            <button class="btn btn-more">
-                <i class="fa fa fa-reply icon-closed"></i>
-                <i class="fa fa-times icon-open"></i>
-                <i class="fa fa-heart-o icon-hearted"></i>
-            </button>
-            
-            <div class="content-post">
-                <div class="post-avatar"></div>
-
                 <div class="post-content">
                     <span class="post-title">{{Rank_name}}</span>
                     <p class="post-body">{{description}}</p>
@@ -241,56 +154,9 @@
       </div>
     {{/ranks}}
     
-    <div class="panel-element">
-        <div class="element-actions">
-            <button class="btn btn-action btn-hide"><i class="fa fa-ban"></i></button>
-            <button class="btn btn-action btn-heart"><i class="fa fa-heart-o"></i></button>
-        </div>
-        
-        <div class="element-content">
-            <button class="btn btn-more">
-                <i class="fa fa fa-reply icon-closed"></i>
-                <i class="fa fa-times icon-open"></i>
-                <i class="fa fa-heart-o icon-hearted"></i>
-            </button>
-            
-            <div class="content-post">
-                <div class="post-avatar"></div>
-
-                <div class="post-content">
-                    <span class="post-title">Nullam egestas neque et</span>
-                    <p class="post-body">orci lacinia finibus. Nunc rutrum urna at libero pretium, vel gravid.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="panel-element">
-        <div class="element-actions">
-            <button class="btn btn-action btn-hide"><i class="fa fa-ban"></i></button>
-            <button class="btn btn-action btn-heart"><i class="fa fa-heart-o"></i></button>
-        </div>
-        
-        <div class="element-content">
-            <button class="btn btn-more">
-                <i class="fa fa fa-reply icon-closed"></i>
-                <i class="fa fa-times icon-open"></i>
-                <i class="fa fa-heart-o icon-hearted"></i>
-            </button>
-            
-            <div class="content-post">
-                <div class="post-avatar"></div>
-
-                <div class="post-content">
-                    <span class="post-title">Lorem Ipsum Dolor Sit</span>
-                    <p class="post-body">Amet consectetur adipiscing elit vestibulum lacinia nibh id sem.</p>
-                </div>
-            </div>
-        </div>
-    </div>
             </section>
             <div class="clearfix"></div>
-        </section>
+    </section>
     </section>
 
     <!-- ****************************** Commuter Section ************************** -->
