@@ -59,7 +59,6 @@ exports.add = function (req, res, next) {
 
         if (err) return next(err);
         var input = JSON.parse(JSON.stringify(req.body));
-        console.log(input);
         var data = {
             description : input.description,
             date :input.date,
