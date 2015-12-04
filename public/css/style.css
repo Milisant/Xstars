@@ -321,8 +321,7 @@ a:hover {
 /////////////////////////////////////////////////////////////////////*/
 
 #banner {
-    background: url('http://i.imgur.com/Lj4DLLF.png');
-    background-size: cover;
+    
     padding-top: 80px;
     background-attachment: fixed;
     position: relative;

@@ -4,9 +4,9 @@
 
     <nav id="sidebar-wrapper">
         <a id="menu-close" href="#" class="close-btn toggle"><i class="ion-ios-close-empty"></i></a>
-        <uls class="sidebar-nav">
+        <ul class="sidebar-nav">
             <li><a href="#gallery">Home</a></li>
-            <li><a href="#gallery">Commuter</a></li>
+            <li><a href="#banner">Trips History</a></li>
             <li><a href="#features">Rank Manager</a></li>
             <li><a href="#team">Development Team</a></li>
         </ul>
@@ -25,435 +25,246 @@
 
     <!-- ****************************** Banner ************************** -->
 
-    <section id="gallery" class="block">
-        <section class="container">
-            <section class="row">
-                <div class="title-box" style="color:#fff;"><h1 class="block-title wow animated rollIn">
-                <span class="bb-top-left" style="border-color: #fff; "></span>
-                <span class="bb-bottom-left" style="border-color: #fff; "></span>
-                Commuter
-                <span class="bb-top-right" style="border-color: #fff; "></span>
-                <span class="bb-bottom-right" style="border-color: #fff; "></span>
-                </h1></div>
-            </section>
-            <section class="row">
-                <form action="/issues/add" method="post">
-                    <h1>Add new complaint</h1>
-    <div class="timer">
-    <div id="pm">
-  <input type="button" id="plus" value="&#xf0de;">
-  <input type="button" id="minus" value="&#xf0dd;">
-</div>
-<p id="result">30</p>
-<p id="sec">sec</p>
-<canvas id="progress" width="200" height="200"></canvas>
-<!-- progress bar -->
-</div>
-<div id = "results1">
-<p id="demo1"></p><br />
-
-</div>
-<div id = "results2">
-    <p id="demo2"></p>
-</div>
-<div class="buttons">
-  <input type="button"  id="start" value="Start">
-  <input type="button"  id="stop" value="Stop">
-</div>                    
-                        <!-- <div class="question">
-                            <input type="date" required/>
-                            <label>Date</label>
-                        </div> -->
-                          <div class="question">
-                            <input type="text" name="reg_number" required/>
-                            <label>Taxi registration number</label>
-                          </div>
-                          <input type = "hidden" value="2015-12-03" name ="date">
-                          <input type = "hidden" value="1" name ="association_id">
-                          <input type = "hidden" value="1" name ="rank_id">
-                          <div class="question">
-                            <input type="text" name="rank_name" required/>
-                            <label>Rank</label>
-                          </div>
-                          <div class="question">
-<<<<<<< HEAD
-                            <input type="text" name="description" required/>
-=======
-                            <input type="text" name"description" value="{{product_name}}"required/>
->>>>>>> a00fc3dddc045eb985229ec5f19f82b0168e59a0
-                            <label>Comment</label>
-                          </div>
-                          
- 
-                          <div>
-                          <input type="submit" class="btn btn-success" id="enter" onclick="myFunction()"> 
-                      </div>
-                </form>
-<div>
-<h2>Issues</h2>
-<table class ="table" id = "Issues">
-
-     <th>Id</th>
-     <th>Description</th>
-     <th>Speed(km/h)</th>
-     <th>Taxi association</th>
-     <th>Taxi Rank</th>
-     <th>Date</th>
-  
- 
-{{#issues}}
-<tr>
-      <td>{{Id}}</td>
-      <td>{{description}}</td>
-      <td>{{speed}}</td>
-      <td>{{taxiAssociation_name}}</td>
-      <td>{{Rank_name}}</td>
-      <td>{{Date}}</td>
-
-     
-     <td ><a href="/issues/edit/{{Id}}" class ="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Edit</a></td>
-     <td ><a href="/issues/delete/{{Id}}" class="btn btn-danger">
-        <span class="glyphicon glyphicon-remove"></span>Delete</a></td >
-    </tr>
-{{/issues}}
-
-{{#no_issues}}
-  <p>No issue available yet. Add some above.</p>
-{{/no_issues}}
-
-</table>
-</div>
-
-
-
-
-
-                <!-- <div class="col-xs-12"> -->
-                    <!-- div id="screenshots" class="owl-carousel owl-theme">
-                      <div class="item"><img src="/img/screenshot-1.png" class="img_res wow animated zoomIn"></div>
-                      <div class="item"><img src="/img/screenshot-2.png" class="img_res wow animated zoomIn"></div>
-                      <div class="item"><img src="/img/screenshot-3.png" class="img_res wow animated zoomIn"></div>
-                      <div class="item"><img src="/img/screenshot-4.png" class="img_res wow animated zoomIn"></div>
-                      <div class="item"><img src="/img/screenshot-5.png" class="img_res wow animated zoomIn"></div>
-                      <div class="item"><img src="/img/screenshot-6.png" class="img_res wow animated zoomIn"></div>
-                      <div class="item"><img src="/img/screenshot-7.png" class="img_res wow animated zoomIn"></div>
-                      <div class="item"><img src="/img/screenshot-3.png" class="img_res wow animated zoomIn"></div>
-                      <div class="item"><img src="/img/screenshot-5.png" class="img_res wow animated zoomIn"></div>
-                      <div class="item"><img src="/img/screenshot-1.png" class="img_res wow animated zoomIn"></div>
-                    </div> -->
-
-
-                     <!-- <div class="customNavigation">
-                      <a class="btn prev gallery-nav wow animated bounceInLeft"><i class="ion-ios-arrow-left"></i></a> 
-                      <a class="btn next gallery-nav wow animated bounceInRight"><i class="ion-ios-arrow-right"></i></a>
-                    </div>
-                </div> -->
-            </section>
-        </section>
+  <section id="gallery" class="block">
+    <section class="container">
+      <section class="row">
+        <div class="title-box"><h1 class="block-title wow animated rollIn">
+          <span class="bb-top-left"></span>
+          <span class="bb-bottom-left"></span>
+            Commuter
+          <span class="bb-top-right"></span>
+          <span class="bb-bottom-right"></span>
+        </h1></div>
+      </section>
+      <section class="row">
+        <form action="/issues/add" method="post">
+          <h1>Add new complaint</h1>
+          <div class="timer">
+            <div id="pm">
+              <input type="button" id="plus" value="&#xf0de;">
+              <input type="button" id="minus" value="&#xf0dd;">
+            </div>
+            <p id="result">30</p>
+            <p id="sec">sec</p>
+            <canvas id="progress" width="200" height="200"></canvas>
+            <!-- progress bar -->
+          </div>
+          <div id = "results1">
+            <p id="demo1"></p><br />
+          </div>
+          <div id = "results2">
+            <p id="demo2"></p>
+          </div>
+          <div class="buttons">
+            <input type="button"  id="start" value="Start">
+            <input type="button"  id="stop" value="Stop">
+          </div>
+          <div class="question">
+            <input type="text" name="reg_number" required/>
+            <label>Taxi registration number</label>
+          </div>
+          <input type = "hidden" value="" name ="date">
+          <input type = "hidden" value="1" name ="association_id">
+          <input type = "hidden" value="1" name ="rank_id">
+          <div class="question">
+            <input type="text" name="rank_name" required/>
+            <label>Rank</label>
+          </div>
+          <div class="question">
+            <input type="text" name="description" required/>
+            <label>Comment</label>
+          </div>
+          <button>Submit</button>
+        </form>
+      </section>
     </section>
- 
-    <!-- ****************************** Features Section ************************** -->
+  </section>
+       <!-- ****************************** Commuter Section ************************** -->
 
-    <section id="features" class="block">
-        <section class="container">
-            <section class="row">
-                <div class="title-box"><h1 class="block-title wow animated rollIn">
-                <span class="bb-top-left"></span>
-                <span class="bb-bottom-left"></span>
-                Rank manager
-                <span class="bb-top-right"></span>
-                <span class="bb-bottom-right"></span>
-                </h1></div>
-            </section>
-            
-            <section class="row">
-          <div class="panel">
-    <div class="panel-element">
-        <div class="element-actions">
-            <button class="btn btn-action btn-hide"><i class="fa fa-ban"></i></button>
-            <button class="btn btn-action btn-heart"><i class="fa fa-heart-o"></i></button>
-        </div>
+  <section id="banner" class="block">
+    <section class="container">
+        <section class="row">
+          <div class="title-box"><h1 class="block-title wow animated rollIn">
+            <span class="bb-top-left"></span>
+            <span class="bb-bottom-left"></span>
+              Trips History
+            <span class="bb-top-right"></span>
+            <span class="bb-bottom-right"></span>
+          </h1></div>
+      </section>
+      <section class="row">
+        <h2>Issues</h2>
+        <div class="table-responsive">
+        <table class ="table" id = "Issues">
+          <th>Description</th>
+          <th>Taxi association</th>
+          <th>Taxi Rank</th>
+          <th>Date</th>
+          {{#issues}}
+            <tr>
         
-        <div class="element-content">
-            <button class="btn btn-more">
-                <i class="fa fa fa-reply icon-closed"></i>
-                <i class="fa fa-times icon-open"></i>
-                <i class="fa fa-heart-o icon-hearted"></i>
-            </button>
-            
-            <div class="content-post">
-                <div class="post-avatar"></div>
-
-                <div class="post-content">
-                    <span class="post-title">Lorem Ipsum Dolor Sit</span>
-                    <p class="post-body">Amet consectetur adipiscing elit vestibulum lacinia nibh id sem.</p>
-                </div>
-            </div>
+              <td>{{description}}</td>
+              <td>{{taxiAssociation_name}}</td>
+              <td>{{Rank_name}}</td>
+              <td>{{Date}}</td>
+               <td ><a href="/issues/edit/{{Id}}" class ="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Edit</a></td>
+               <!--<td ><a href="/issues/delete/{{Id}}" class="btn btn-danger">
+                  <span class="glyphicon glyphicon-remove"></span>
+                  Delete
+                </a></td > -->
+            </tr>
+          {{/issues}}
+          {{#no_issues}}
+            <p>No issue available yet. Add some above.</p>
+          {{/no_issues}}
+        </table>
         </div>
-    </div>
-    
-    <div class="panel-element">
-        <div class="element-actions">
-            <button class="btn btn-action btn-hide"><i class="fa fa-ban"></i></button>
-            <button class="btn btn-action btn-heart"><i class="fa fa-heart-o"></i></button>
+        <div class="customNavigation">
+          <a class="btn prev gallery-nav wow animated bounceInLeft"><i class="ion-ios-arrow-left"></i></a> 
+          <a class="btn next gallery-nav wow animated bounceInRight"><i class="ion-ios-arrow-right"></i></a>
         </div>
-        
-        <div class="element-content">
-            <button class="btn btn-more">
-                <i class="fa fa fa-reply icon-closed"></i>
-                <i class="fa fa-times icon-open"></i>
-                <i class="fa fa-heart-o icon-hearted"></i>
-            </button>
-            
-            <div class="content-post">
-                <div class="post-avatar"></div>
-
-                <div class="post-content">
-                    <span class="post-title">Nullam egestas neque et</span>
-                    <p class="post-body">orci lacinia finibus. Nunc rutrum urna at libero pretium, vel gravid.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-{{#ranks}}
-    <div class="panel-element">
-        <div class="element-actions">
-            <button class="btn btn-action btn-hide"><i class="fa fa-ban"></i></button>
-            <button class="btn btn-action btn-heart"><i class="fa fa-heart-o"></i></button>
-        </div>
-        
-        <div class="element-content">
-            <button class="btn btn-more">
-                <i class="fa fa fa-reply icon-closed"></i>
-                <i class="fa fa-times icon-open"></i>
-                <i class="fa fa-heart-o icon-hearted"></i>
-            </button>
-            
-            <div class="content-post">
-                <div class="post-avatar"></div>
-
-                <div class="post-content">
-                    <span class="post-title">{{Rank_name}}</span>
-                    <p class="post-body">{{description}}</p>
-                </div>
-            </div>
-        </div>
-      </div>
-    {{/ranks}}
-    
-    <div class="panel-element">
-        <div class="element-actions">
-            <button class="btn btn-action btn-hide"><i class="fa fa-ban"></i></button>
-            <button class="btn btn-action btn-heart"><i class="fa fa-heart-o"></i></button>
-        </div>
-        
-        <div class="element-content">
-            <button class="btn btn-more">
-                <i class="fa fa fa-reply icon-closed"></i>
-                <i class="fa fa-times icon-open"></i>
-                <i class="fa fa-heart-o icon-hearted"></i>
-            </button>
-            
-            <div class="content-post">
-                <div class="post-avatar"></div>
-
-                <div class="post-content">
-                    <span class="post-title">Nullam egestas neque et</span>
-                    <p class="post-body">orci lacinia finibus. Nunc rutrum urna at libero pretium, vel gravid.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="panel-element">
-        <div class="element-actions">
-            <button class="btn btn-action btn-hide"><i class="fa fa-ban"></i></button>
-            <button class="btn btn-action btn-heart"><i class="fa fa-heart-o"></i></button>
-        </div>
-        
-        <div class="element-content">
-            <button class="btn btn-more">
-                <i class="fa fa fa-reply icon-closed"></i>
-                <i class="fa fa-times icon-open"></i>
-                <i class="fa fa-heart-o icon-hearted"></i>
-            </button>
-            
-            <div class="content-post">
-                <div class="post-avatar"></div>
-
-                <div class="post-content">
-                    <span class="post-title">Lorem Ipsum Dolor Sit</span>
-                    <p class="post-body">Amet consectetur adipiscing elit vestibulum lacinia nibh id sem.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-            </section>
-            <div class="clearfix"></div>
-        </section>
+      </section>
     </section>
-
-    <!-- ****************************** Commuter Section ************************** -->
-
-   <!-- <section id="gallery" class="block">
-        <section class="container">
-            <section class="row">
-                <div class="title-box" style="color:#fff;"><h1 class="block-title wow animated rollIn">
-                <span class="bb-top-left" style="border-color: #fff; "></span>
-                <span class="bb-bottom-left" style="border-color: #fff; "></span>
-                Commuter
-                <span class="bb-top-right" style="border-color: #fff; "></span>
-                <span class="bb-bottom-right" style="border-color: #fff; "></span>
-                </h1></div>
-            </section>
-            <section class="row">
-                <form action="/issue/add" method="post">
-                    <h1>Add new complaint</h1>
-    <div class="timer">
-    <div id="pm">
-  <input type="button" id="plus" value="&#xf0de;">
-  <input type="button" id="minus" value="&#xf0dd;">
-</div>
-<p id="result">30</p>
-<p id="sec">sec</p>
-<canvas id="progress" width="200" height="200"></canvas>
-<! progress bar -->
-<!---</div>
-<div class="buttons">
-  <input type="button" id="start" value="Start">
-  <input type="button" id="stop" value="Stop">
-</div>
-                          <div class="question">
-                            <input type="text" required/>
-                            <label>Taxi registration number</label>
-                          </div>
-                          <div class="question">
-                            <input type="text" required/>
-                            <label>Rank</label>
-                          </div>
-                          <div class="question">
-                            <input type="text" required/>
-                            <label>Comment</label>
-                          </div>
+  </section>
  
+    <!-- ****************************** Rank Manager Section ************************** -->
 
-                          <button>Submit</button>
-                </form>
-                <! <div class="col-xs-12"> -->
-                    <!-- div id="screenshots" class="owl-carousel owl-theme">
-                      <div class="item"><img src="/img/screenshot-1.png" class="img_res wow animated zoomIn"></div>
-                      <div class="item"><img src="/img/screenshot-2.png" class="img_res wow animated zoomIn"></div>
-                      <div class="item"><img src="/img/screenshot-3.png" class="img_res wow animated zoomIn"></div>
-                      <div class="item"><img src="/img/screenshot-4.png" class="img_res wow animated zoomIn"></div>
-                      <div class="item"><img src="/img/screenshot-5.png" class="img_res wow animated zoomIn"></div>
-                      <div class="item"><img src="/img/screenshot-6.png" class="img_res wow animated zoomIn"></div>
-                      <div class="item"><img src="/img/screenshot-7.png" class="img_res wow animated zoomIn"></div>
-                      <div class="item"><img src="/img/screenshot-3.png" class="img_res wow animated zoomIn"></div>
-                      <div class="item"><img src="/img/screenshot-5.png" class="img_res wow animated zoomIn"></div>
-                      <div class="item"><img src="/img/screenshot-1.png" class="img_res wow animated zoomIn"></div>
-                    </div> -->
+<section id="features" class="block">
+  <section class="container">
+    <section class="row">
+      <div class="title-box"><h1 class="block-title wow animated rollIn">
+        <span class="bb-top-left"></span>
+        <span class="bb-bottom-left"></span>
+          Rank manager
+        <span class="bb-top-right"></span>
+        <span class="bb-bottom-right"></span>
+      </h1></div>
+    </section>
+    <form id ="searchform">
+      <input type="text" placeholder="search rank">
+    </form>        
+    <section class="row">
+      <div class="panel" id="searchp">
+        {{#issues}}
+          <div class="panel-element">
+            <div class="element-actions">
+              <button class="btn btn-action btn-hide"><i class="fa fa-ban"></i></button>
+              <button class="btn btn-action btn-heart"><i class="fa fa-heart-o"></i></button>
+            </div>
+            <div class="element-content">
+              <button class="btn btn-more">
+              <i class="fa fa fa-reply icon-closed"></i>
+              <i class="fa fa-times icon-open"></i>
+              <i class="fa fa-heart-o icon-hearted"></i>
+              </button>
+              <div class="content-post">
+                <div class="post-avatar"></div>
+                <div class="post-content">
+                  <span class="post-title">{{Rank_name}}</span>
+                  <p class="post-body">{{description}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        {{/issues}}
+    </section>
+      <div class="clearfix"></div>
+    </section>
+  </section>
 
-
-                     <!-- <div class="customNavigation">
-                      <a class="btn prev gallery-nav wow animated bounceInLeft"><i class="ion-ios-arrow-left"></i></a> 
-                      <a class="btn next gallery-nav wow animated bounceInRight"><i class="ion-ios-arrow-right"></i></a>
-                    </div>
-                </div> -->
-            <!--</section>
-        </section>
-    </section>->-->
+ 
 
     <!-- ****************************** Team Section ************************** -->
  
-    <section id="team" class="block">
-        <section class="container">
-            <section class="row">
-                <div class="col-md-12">
-                    <div class="title-box">
-                        <h1 class="block-title wow animated rollIn">
-                            <span class="bb-top-left"></span>
-                            <span class="bb-bottom-left"></span>
-                            Development Team
-                            <span class="bb-top-right"></span>
-                            <span class="bb-bottom-right"></span>
-                        </h1>
-                    </div>
-                </div>
-            </section>
-            <section class="row">
-                <section class="col-md-3 col-sm-6">
-                    <div class="team-member wow animated fadeIn" data-wow-delay=="0.3s">
-                        <img src="/img/siphesande.png" class="img_res team-pic">
-                        <h2 class="wow animated fadeInDown" data-wow-delay=="0.7s">Siphesande Malgas</h2>
-                        <p class="wow animated fadeIn" data-wow-delay=="0.7s">Back-end Developer</p>
-                        <ul class="team-social">
-                            <li class="wow animated fadeInLeft facebook"><a href="#"><i class="ion-social-facebook"></i></a></li>
-                            <li class="wow animated fadeInLeft linkedin"><a href="#"><i class="ion-social-linkedin"></i></a></li>
-                            <li class="wow animated fadeInRight googleplus"><a href="#"><i class="ion-social-googleplus-outline"></i></a></li>
-                            <li class="wow animated fadeInRight github"><a href="https://github.com/siphesande"><i class="ion-social-github"></i></a></li>
-                        </ul>
-                    </div>
-                </section>
-                <section class="col-md-3 col-sm-6">
-                    <div class="team-member wow animated fadeIn" data-wow-delay=="0.3s">
-                        <img src="/img/oyama.jpeg" class="img_res team-pic">
-                        <h2 class="wow animated fadeInDown" data-wow-delay=="0.7s">Oyama Siphula</h2>
-                        <p class="wow animated fadeIn" data-wow-delay=="0.7s">Front-end Developer</p>
-                        <ul class="team-social">
-                            <li class="wow animated fadeInLeft facebook"><a href="#"><i class="ion-social-facebook"></i></a></li>
-                            <li class="wow animated fadeInLeft linkedin"><a href="#"><i class="ion-social-linkedin"></i></a></li>
-                            <li class="wow animated fadeInRight googleplus"><a href="https://plus.google.com/117330463198550148479/posts"><i class="ion-social-googleplus-outline"></i></a></li>
-                            <li class="wow animated fadeInRight github"><a href="https://github.com/oyamasiphula"><i class="ion-social-github"></i></a></li>
-                        </ul>
-                    </div>
-                </section>
-                <section class="col-md-3 col-sm-6">
-                    <div class="team-member wow animated fadeIn" data-wow-delay=="0.3s">
-                        <img src="/img/onie.jpg" class="img_res team-pic">
-                        <h2 class="wow animated fadeInDown" data-wow-delay=="0.7s">Onwaba Mrhwetyana</h2>
-                        <p class="wow animated fadeIn" data-wow-delay=="0.7s">Back-end Developer</p>
-                        <ul class="team-social">
-                            <li class="wow animated fadeInLeft facebook"><a href="#"><i class="ion-social-facebook"></i></a></li>
-                            <li class="wow animated fadeInLeft linkedin"><a href="#"><i class="ion-social-linkedin"></i></a></li>
-                            <li class="wow animated fadeInRight googleplus"><a href="https://plus.google.com/104582211686215878032/posts"><i class="ion-social-googleplus-outline"></i></a></li>
-                            <li class="wow animated fadeInRight github"><a href="https://github.com/Onwa2014"><i class="ion-social-github"></i></a></li>
-                        </ul>
-                    </div>
-                </section>
-                <section class="col-md-3 col-sm-6">
-                    <div class="team-member wow animated fadeIn" data-wow-delay=="0.3s">
-                        <img src="/img/linkie.jpg" class="img_res team-pic">
-                        <h2 class="wow animated fadeInDown" data-wow-delay=="0.7s">Linkie Masiko</h2>
-                        <p class="wow animated fadeIn" data-wow-delay=="0.7s">Front-end Developer</p>
-                        <ul class="team-social">
-                            <li class="wow animated fadeInLeft facebook"><a href="#"><i class="ion-social-facebook"></i></a></li>
-                            <li class="wow animated fadeInLeft linkedin"><a href="#"><i class="ion-social-linkedin"></i></a></li>
-                            <li class="wow animated fadeInRight googleplus"><a href="https://plus.google.com/104253559339043641555/posts"><i class="ion-social-googleplus-outline"></i></a></li>
-                            <li class="wow animated fadeInRight github"><a href="https://github.com/Nwabisa"><i class="ion-social-github"></i></a></li>
-                        </ul>
-                    </div>
-                </section>
-            </section>
+  <section id="team" class="block">
+    <section class="container">
+      <section class="row">
+        <div class="col-md-12">
+          <div class="title-box">
+            <h1 class="block-title wow animated rollIn">
+              <span class="bb-top-left"></span>
+              <span class="bb-bottom-left"></span>
+              Development Team
+              <span class="bb-top-right"></span>
+              <span class="bb-bottom-right"></span>
+            </h1>
+          </div>
+        </div>
+      </section>
+      <section class="row">
+        <section class="col-md-3 col-sm-6">
+          <div class="team-member wow animated fadeIn" data-wow-delay=="0.3s">
+            <img src="/img/siphesande.png" class="img_res team-pic">
+            <h2 class="wow animated fadeInDown" data-wow-delay=="0.7s">Siphesande Malgas</h2>
+            <p class="wow animated fadeIn" data-wow-delay=="0.7s">Back-end Developer</p>
+            <ul class="team-social">
+              <li class="wow animated fadeInLeft facebook"><a href="#"><i class="ion-social-facebook"></i></a></li>
+              <li class="wow animated fadeInLeft linkedin"><a href="#"><i class="ion-social-linkedin"></i></a></li>
+              <li class="wow animated fadeInRight googleplus"><a href="#"><i class="ion-social-googleplus-outline"></i></a></li>
+              <li class="wow animated fadeInRight github"><a href="#"><i class="ion-social-github"></i></a></li>
+            </ul>
+          </div>
         </section>
+        <section class="col-md-3 col-sm-6">
+          <div class="team-member wow animated fadeIn" data-wow-delay=="0.3s">
+            <img src="/img/oyama.jpeg" class="img_res team-pic">
+            <h2 class="wow animated fadeInDown" data-wow-delay=="0.7s">Oyama Siphula</h2>
+            <p class="wow animated fadeIn" data-wow-delay=="0.7s">Front-end Developer</p>
+            <ul class="team-social">
+              <li class="wow animated fadeInLeft facebook"><a href="#"><i class="ion-social-facebook"></i></a></li>
+              <li class="wow animated fadeInLeft linkedin"><a href="#"><i class="ion-social-linkedin"></i></a></li>
+              <li class="wow animated fadeInRight googleplus"><a href="#"><i class="ion-social-googleplus-outline"></i></a></li>
+              <li class="wow animated fadeInRight github"><a href="#"><i class="ion-social-github"></i></a></li>
+            </ul>
+          </div>
+        </section>
+        <section class="col-md-3 col-sm-6">
+          <div class="team-member wow animated fadeIn" data-wow-delay=="0.3s">
+            <img src="/img/onie.jpg" class="img_res team-pic">
+            <h2 class="wow animated fadeInDown" data-wow-delay=="0.7s">Onwaba Mrhwetyana</h2>
+            <p class="wow animated fadeIn" data-wow-delay=="0.7s">Back-end Developer</p>
+            <ul class="team-social">
+              <li class="wow animated fadeInLeft facebook"><a href="#"><i class="ion-social-facebook"></i></a></li>
+              <li class="wow animated fadeInLeft linkedin"><a href="#"><i class="ion-social-linkedin"></i></a></li>
+              <li class="wow animated fadeInRight googleplus"><a href="#"><i class="ion-social-googleplus-outline"></i></a></li>
+              <li class="wow animated fadeInRight github"><a href="#"><i class="ion-social-github"></i></a></li>
+            </ul>
+          </div>
+        </section>
+        <section class="col-md-3 col-sm-6">
+          <div class="team-member wow animated fadeIn" data-wow-delay=="0.3s">
+            <img src="/img/linkie.jpg" class="img_res team-pic">
+            <h2 class="wow animated fadeInDown" data-wow-delay=="0.7s">Linkie Masiko</h2>
+            <p class="wow animated fadeIn" data-wow-delay=="0.7s">Front-end Developer</p>
+            <ul class="team-social">
+              <li class="wow animated fadeInLeft facebook"><a href="#"><i class="ion-social-facebook"></i></a></li>
+              <li class="wow animated fadeInLeft linkedin"><a href="#"><i class="ion-social-linkedin"></i></a></li>
+              <li class="wow animated fadeInRight googleplus"><a href="#"><i class="ion-social-googleplus-outline"></i></a></li>
+              <li class="wow animated fadeInRight github"><a href="#"><i class="ion-social-github"></i></a></li>
+            </ul>
+          </div>
+        </section>
+      </section>
     </section>
+  </section>
  
         <!-- ****************************** Footer ************************** -->
 
-        <section id="footer">
-            <section class="container">
-                <section class="row">
-                    <div class="col-sm-6">
-                        <span>powered By </span>
-                        <h1 class="footer-logo">
-                            <a href="">Xstars</a>
-                        </h1>
-                    </div>
-                    <div class="col-sm-6">
-                        <p class="copyright">All &copy; Copyright Reserved 2014</p>
-                    </div>
-                </section>
-            </section>
-        </section>
+<section id="footer">
+  <section class="container">
+    <section class="row">
+      <div class="col-sm-6">
+        <span>powered By </span>
+        <h1 class="footer-logo">
+          <a href="">Xstars</a>
+        </h1>
+      </div>
+      <div class="col-sm-6">
+        <p class="copyright">All &copy; Copyright Reserved 2015</p>
+      </div>
+    </section>
+  </section>
+</section>
 
     <!-- All the scripts -->
 
@@ -466,3 +277,4 @@
     <script src="/js/customRankman.js"></script>
     <script src="/js/geolib.min.js"></script>
     <script src="/js/xstars.js"></script>
+    <script src="ajax.js"></script>

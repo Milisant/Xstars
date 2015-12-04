@@ -48,7 +48,7 @@ app.get('/',issues.show)
 app.post('/issues/add',issues.add);
 app.get('/issues/edit/:Id', issues.get);
 app.post('/issues/update/:Id', issues.update);
-//app.get('/issues/addSales', issues.showAdd);
+app.get('/issues/search/:query', issues.issueSearch);
 app.get('/issues/delete/:Id', issues.delete);
 
 
