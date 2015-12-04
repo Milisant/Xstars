@@ -8,16 +8,16 @@ exports.show =function (req, res, next){
         connection.query('SELECT * from Ranks',[], function(err, rankList){
             if(err)
                 return next("Error Selecting : %s ", err);
-                var issue = issuesresults[0];
-                console.log(issue)
+                // var issue = issuesresults[0];
+                // console.log(issue)
 
-                var ranks = rankList.map(function(Rank_name){
-                    return {
-                        id : Rank_name.id,
-                        Rank_name : Rank_name.Rank_name,
-                        selected : Rank_name.id === issue.id
-                    }
-                });
+                // var ranks = rankList.map(function(Rank_name){
+                //     return {
+                //         id : Rank_name.id,
+                //         Rank_name : Rank_name.Rank_name,
+                //         selected : Rank_name.id === issue.id
+                //     }
+                // });
 
 
                 res.render('home',{
