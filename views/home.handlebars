@@ -6,12 +6,12 @@
         <a id="menu-close" href="#" class="close-btn toggle"><i class="ion-ios-close-empty"></i></a>
         <ul class="sidebar-nav">
             <li><a href="#gallery">Home</a></li>
-<<<<<<< HEAD
+
             <li><a href="#banner">Trips History</a></li>
-=======
-            <li><a href="#gallery">Commuter</a></li>
+<!-- =======
+            
             <li><a href="/issues/getIssues">Trip History</a></li>
->>>>>>> b4d517cd0837dd696935ea8eff82366c440b77b8
+>>>>>>> b4d517cd0837dd696935ea8eff82366c440b77b8 -->
             <li><a href="#features">Rank Manager</a></li>
             <li><a href="#team">Development Team</a></li>
         </ul>
@@ -30,7 +30,7 @@
 
     <!-- ****************************** Banner ************************** -->
 
-<<<<<<< HEAD
+
   <section id="gallery" class="block">
     <section class="container">
       <section class="row">
@@ -43,7 +43,7 @@
         </h1></div>
       </section>
       <section class="row">
-        <form action="/issues/add" method="post">
+        <form action="/issues/add" method="post" id="addIssue" >
           <h1>Add new complaint</h1>
           <div class="timer">
             <div id="pm">
@@ -64,33 +64,11 @@
           <div class="buttons">
             <input type="button"  id="start" value="Start">
             <input type="button"  id="stop" value="Stop">
-          </div>
-=======
-    <section id="gallery" class="block">
-        <section class="container">
-            <section class="row">
-                <div class="title-box" style="color:#fff;"><h1 class="block-title wow animated rollIn">
-                <span class="bb-top-left" style="border-color: #fff; "></span>
-                <span class="bb-bottom-left" style="border-color: #fff; "></span>
-                Commuter
-                <span class="bb-top-right" style="border-color: #fff; "></span>
-                <span class="bb-bottom-right" style="border-color: #fff; "></span>
-                </h1></div>
-            </section>
-            <section class="row">
-                <form action="/issues/add" method="post">
-                <h1>Add new complaint</h1>
-    <div class="timer">
-            <div id="pm">
-          <input type="button" id="plus" value="&#xf0de;">
-          <input type="button" id="minus" value="&#xf0dd;">
-            </div>
-            <p id="result">30</p>
-        <p id="sec">sec</p>
-    <canvas id="progress" width="200" height="200"></canvas>
+          </div> 
+   
 <!-- progress bar -->
     </div>
-        <div id = "results1">
+       <!-- <div id = "results1">
         <p id="demo1"></p><br/>
         </div>
         <div id = "results2">
@@ -99,16 +77,17 @@
         <div class="buttons">
           <input type="button"  id="start" value="Start">
           <input type="button"  id="stop" value="Stop">
-        </div>                    
->>>>>>> b4d517cd0837dd696935ea8eff82366c440b77b8
+        </div>   -->                  
+
           <div class="question">
             <input type="text" name="reg_number" required/>
             <label>Taxi registration number</label>
           </div>
-<<<<<<< HEAD
-          <input type = "hidden" value="" name ="date">
+
+          <input type = "hidden" value="2015-12-04" name ="date">
           <input type = "hidden" value="1" name ="association_id">
           <input type = "hidden" value="1" name ="rank_id">
+          <input type ="hidden"  name="speed" id="speed">
           <div class="question">
             <input type="text" name="rank_name" required/>
             <label>Rank</label>
@@ -140,15 +119,16 @@
         <div class="table-responsive">
         <table class ="table" id = "Issues">
           <th>Description</th>
-          <th>Taxi association</th>
-          <th>Taxi Rank</th>
+          <th>Registration number</th>
+          <th>Speed</th>
           <th>Date</th>
+          <th></th>
           {{#issues}}
             <tr>
         
               <td>{{description}}</td>
-              <td>{{taxiAssociation_name}}</td>
-              <td>{{Rank_name}}</td>
+              <td>{{reg_number}}</td>
+              <td>{{speed}}</td>
               <td>{{Date}}</td>
                <td ><a href="/issues/edit/{{Id}}" class ="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Edit</a></td>
                <!--<td ><a href="/issues/delete/{{Id}}" class="btn btn-danger">
@@ -210,8 +190,8 @@
             </div>
           </div>
         {{/issues}}
-=======
-          <input type = "hidden" value="2015-12-03" name ="date">
+
+         <!--  <input type = "hidden" value="2015-12-03" name ="date">
           <input type = "hidden" value="1" name ="association_id">
           <input type = "hidden" value="1" name ="rank_id" >
 
@@ -238,7 +218,7 @@
         <div>
         <input type="submit" class="btn btn-success" id="enter" onclick="myFunction()"> 
         </div>
-                </form>
+                </form> -->
                 <!-- <div class="col-xs-12"> -->
                     <!-- div id="screenshots" class="owl-carousel owl-theme">
                       <div class="item"><img src="/img/screenshot-1.png" class="img_res wow animated zoomIn"></div>
@@ -265,7 +245,7 @@
  
     <!-- ****************************** Features Section ************************** -->
 
-    <section id="features" class="block">
+   <!--  <section id="features" class="block">
         <section class="container">
             <section class="row">
                 <div class="title-box"><h1 class="block-title wow animated rollIn">
@@ -299,16 +279,16 @@
             </div>
         </div>
       </div>
-    {{/ranks}}
+    {{/ranks}} -->
     
             </section>
             <div class="clearfix"></div>
     </section>
->>>>>>> b4d517cd0837dd696935ea8eff82366c440b77b8
+<!-- >>>>>>> b4d517cd0837dd696935ea8eff82366c440b77b8
     </section>
       <div class="clearfix"></div>
     </section>
-  </section>
+  </section> -->
 
  
 
@@ -388,7 +368,6 @@
  
         <!-- ****************************** Footer ************************** -->
 
-<<<<<<< HEAD
 <section id="footer">
   <section class="container">
     <section class="row">
@@ -404,7 +383,7 @@
     </section>
   </section>
 </section>
-=======
+<!-- =======
         <section id="footer">
             <section class="container">
                 <section class="row">
@@ -425,7 +404,7 @@
                 </section>
             </section>
         </section>
->>>>>>> b4d517cd0837dd696935ea8eff82366c440b77b8
+>>>>>>> b4d517cd0837dd696935ea8eff82366c440b77b8 -->
 
     <!-- All the scripts -->
 
