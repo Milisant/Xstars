@@ -12,22 +12,18 @@ CREATE TABLE Ranks (
 	FOREIGN KEY(association_id) REFERENCES Taxi_associations(id)
 );
 
-CREATE TABLE Issues(
-	id int not null auto_increment,
-	primary key(id),
-	description varchar(100),
-	date DATE,
-	association_id int(100),
-	rank_id int(100),
-	start_location_latitude decimal(20,10),
-	start_location_longitude decimal(20,10),
-	start_location_time bigint,
-	end_location_latitude decimal(20,10),
-	end_location_longitude decimal(20,10),
-	end_location_time bigint,
-	speed decimal(20.10),
-	FOREIGN KEY(association_id) REFERENCES Taxi_associations(id),
-	FOREIGN KEY(rank_id) REFERENCES Ranks(id)
+CREATE TABLE IF NOT EXISTS `Issues` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `description` varchar(100) DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  `association_id` int(100) DEFAULT NULL,
+  `reg_number` varchar(100) NOT NULL,
+  `rank_id` int(100) DEFAULT NULL,
+  `speed` decimal(20,0) DEFAULT NULL,
+  `rank_name` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `association_id` (`association_id`),
+  KEY `rank_id` (`rank_id`)
 );
 
 
