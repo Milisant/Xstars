@@ -6,7 +6,12 @@
         <a id="menu-close" href="#" class="close-btn toggle"><i class="ion-ios-close-empty"></i></a>
         <ul class="sidebar-nav">
             <li><a href="#gallery">Home</a></li>
+<<<<<<< HEAD
             <li><a href="#banner">Trips History</a></li>
+=======
+            <li><a href="#gallery">Commuter</a></li>
+            <li><a href="/issues/getIssues">Trip History</a></li>
+>>>>>>> b4d517cd0837dd696935ea8eff82366c440b77b8
             <li><a href="#features">Rank Manager</a></li>
             <li><a href="#team">Development Team</a></li>
         </ul>
@@ -25,6 +30,7 @@
 
     <!-- ****************************** Banner ************************** -->
 
+<<<<<<< HEAD
   <section id="gallery" class="block">
     <section class="container">
       <section class="row">
@@ -59,10 +65,47 @@
             <input type="button"  id="start" value="Start">
             <input type="button"  id="stop" value="Stop">
           </div>
+=======
+    <section id="gallery" class="block">
+        <section class="container">
+            <section class="row">
+                <div class="title-box" style="color:#fff;"><h1 class="block-title wow animated rollIn">
+                <span class="bb-top-left" style="border-color: #fff; "></span>
+                <span class="bb-bottom-left" style="border-color: #fff; "></span>
+                Commuter
+                <span class="bb-top-right" style="border-color: #fff; "></span>
+                <span class="bb-bottom-right" style="border-color: #fff; "></span>
+                </h1></div>
+            </section>
+            <section class="row">
+                <form action="/issues/add" method="post">
+                <h1>Add new complaint</h1>
+    <div class="timer">
+            <div id="pm">
+          <input type="button" id="plus" value="&#xf0de;">
+          <input type="button" id="minus" value="&#xf0dd;">
+            </div>
+            <p id="result">30</p>
+        <p id="sec">sec</p>
+    <canvas id="progress" width="200" height="200"></canvas>
+<!-- progress bar -->
+    </div>
+        <div id = "results1">
+        <p id="demo1"></p><br/>
+        </div>
+        <div id = "results2">
+            <p id="demo2"></p>
+        </div>
+        <div class="buttons">
+          <input type="button"  id="start" value="Start">
+          <input type="button"  id="stop" value="Stop">
+        </div>                    
+>>>>>>> b4d517cd0837dd696935ea8eff82366c440b77b8
           <div class="question">
             <input type="text" name="reg_number" required/>
             <label>Taxi registration number</label>
           </div>
+<<<<<<< HEAD
           <input type = "hidden" value="" name ="date">
           <input type = "hidden" value="1" name ="association_id">
           <input type = "hidden" value="1" name ="rank_id">
@@ -167,6 +210,101 @@
             </div>
           </div>
         {{/issues}}
+=======
+          <input type = "hidden" value="2015-12-03" name ="date">
+          <input type = "hidden" value="1" name ="association_id">
+          <input type = "hidden" value="1" name ="rank_id" >
+
+          <div class="question">
+            <input type="text" name="description" required/>
+            <input type="text" name"description" value="{{description}}"required/>
+            <label>description</label>
+          </div>
+            
+            <div class="dropdown-button">
+            <p>Select Rank Name</p> 
+              <select name="id" class="description">
+                {{#rank_specification}}
+                <option value = "{{id}}">{{Rank_name}}</option>
+                {{/rank_specification}}
+              </select> 
+            </div> 
+
+          <div class="question">
+            <input type="text" name="description" required/>
+            <input type="text" name"description" value="{{product_name}}"required/>
+            <label>Comment</label>
+          </div>
+        <div>
+        <input type="submit" class="btn btn-success" id="enter" onclick="myFunction()"> 
+        </div>
+                </form>
+                <!-- <div class="col-xs-12"> -->
+                    <!-- div id="screenshots" class="owl-carousel owl-theme">
+                      <div class="item"><img src="/img/screenshot-1.png" class="img_res wow animated zoomIn"></div>
+                      <div class="item"><img src="/img/screenshot-2.png" class="img_res wow animated zoomIn"></div>
+                      <div class="item"><img src="/img/screenshot-3.png" class="img_res wow animated zoomIn"></div>
+                      <div class="item"><img src="/img/screenshot-4.png" class="img_res wow animated zoomIn"></div>
+                      <div class="item"><img src="/img/screenshot-5.png" class="img_res wow animated zoomIn"></div>
+                      <div class="item"><img src="/img/screenshot-6.png" class="img_res wow animated zoomIn"></div>
+                      <div class="item"><img src="/img/screenshot-7.png" class="img_res wow animated zoomIn"></div>
+                      <div class="item"><img src="/img/screenshot-3.png" class="img_res wow animated zoomIn"></div>
+                      <div class="item"><img src="/img/screenshot-5.png" class="img_res wow animated zoomIn"></div>
+                      <div class="item"><img src="/img/screenshot-1.png" class="img_res wow animated zoomIn"></div>
+                    </div> -->
+
+
+                     <!-- <div class="customNavigation">
+                      <a class="btn prev gallery-nav wow animated bounceInLeft"><i class="ion-ios-arrow-left"></i></a> 
+                      <a class="btn next gallery-nav wow animated bounceInRight"><i class="ion-ios-arrow-right"></i></a>
+                    </div>
+                </div> -->
+            </section>
+        </section>
+    </section>
+ 
+    <!-- ****************************** Features Section ************************** -->
+
+    <section id="features" class="block">
+        <section class="container">
+            <section class="row">
+                <div class="title-box"><h1 class="block-title wow animated rollIn">
+                <span class="bb-top-left"></span>
+                <span class="bb-bottom-left"></span>
+                Rank manager
+                <span class="bb-top-right"></span>
+                <span class="bb-bottom-right"></span>
+                </h1></div>
+            </section>
+            <section class="row">
+          <div class="panel">
+    {{#ranks}}
+    <div class="panel-element">
+        <div class="element-actions">
+            <button class="btn btn-action btn-hide"><i class="fa fa-ban"></i></button>
+            <button class="btn btn-action btn-heart"><i class="fa fa-heart-o"></i></button>
+        </div>
+        <div class="element-content">
+                <button class="btn btn-more">
+                    <i class="fa fa fa-reply icon-closed"></i>
+                    <i class="fa fa-times icon-open"></i>
+                    <i class="fa fa-heart-o icon-hearted"></i>
+                </button>
+            <div class="content-post">
+                <div class="post-avatar"></div>
+                <div class="post-content">
+                    <span class="post-title">{{Rank_name}}</span>
+                    <p class="post-body">{{description}}</p>
+                </div>
+            </div>
+        </div>
+      </div>
+    {{/ranks}}
+    
+            </section>
+            <div class="clearfix"></div>
+    </section>
+>>>>>>> b4d517cd0837dd696935ea8eff82366c440b77b8
     </section>
       <div class="clearfix"></div>
     </section>
@@ -250,6 +388,7 @@
  
         <!-- ****************************** Footer ************************** -->
 
+<<<<<<< HEAD
 <section id="footer">
   <section class="container">
     <section class="row">
@@ -265,6 +404,28 @@
     </section>
   </section>
 </section>
+=======
+        <section id="footer">
+            <section class="container">
+                <section class="row">
+                    <div class="col-sm-6">
+                        <span>powered By </span>
+                        <h1 class="footer-logo">
+                            <a href="">Xstars</a>
+                        </h1>
+                    </div>
+
+                    </div>
+                   <div class ="well-well-sm">
+                   <a href="/" class ="btn btn-primary">Back to home</a>
+                   </div>
+                    <div class="col-sm-6">
+                        <p class="copyright">All &copy; Copyright Reserved 2014</p>
+                    </div>
+                </section>
+            </section>
+        </section>
+>>>>>>> b4d517cd0837dd696935ea8eff82366c440b77b8
 
     <!-- All the scripts -->
 

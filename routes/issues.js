@@ -19,21 +19,57 @@ exports.issueSearch = function(req, res, next){
 
 exports.show =function (req, res, next){
     req.getConnection(function(err, connection){
-        if (err) return next(err);
-		//connection.query('SELECT Qty AS AmtSold ,Sales_date, Sales_price,  product_name from Sales s INNER JOIN Products p ON s.Product_Id = p.Id ORDER BY Sales_date DESC',[], function(err, results){
+        if (err) 
+                return next(err);
         connection.query('SELECT Issues.Id,Issues.description,taxiAssociation_name,Ranks.Rank_name,DATE_FORMAT(Issues.date, "%d/%m/%Y") as Date,Issues.rank_id FROM Issues INNER JOIN Taxi_associations ON Issues.association_id = Taxi_associations.id INNER JOIN Ranks ON Issues.rank_id = Ranks.id ORDER BY Issues.date DESC',[],function(err, issuesresults){
+<<<<<<< HEAD
                 if (err) return next(err);
             connection.query('SELECT * from Ranks',[], function(err, results){
             	if (err) return next(err);
                 // console.log(issues.length);
+=======
+            if (err) 
+                    return next(err);
+        connection.query('SELECT * from Ranks',[], function(err, rankList){
+            if(err)
+                return next("Error Selecting : %s ", err);
+                var issue = issuesresults[0];
+                console.log(issue)
+
+                var ranks = rankList.map(function(Rank_name){
+                    return {
+                        id : Rank_name.id,
+                        Rank_name : Rank_name.Rank_name,
+                        selected : Rank_name.id === issue.id
+                    }
+                });
+
+
+>>>>>>> b4d517cd0837dd696935ea8eff82366c440b77b8
                 res.render('home',{
-                    issues : issuesresults,
-                    ranks:results
+                    ranks:issuesresults
+                    });
+            });
+        });
+    });
+}
+
+exports.getIssues =function (req, res, next){
+    req.getConnection(function(err, connection){
+        if (err) 
+                return next(err);
+    
+        connection.query('SELECT Issues.Id,Issues.description,Issues.speed,taxiAssociation_name,Ranks.Rank_name,DATE_FORMAT(Issues.date, "%d/%m/%Y") as Date,Issues.rank_id FROM Issues INNER JOIN Taxi_associations ON Issues.association_id = Taxi_associations.id INNER JOIN Ranks ON Issues.rank_id = Ranks.id ORDER BY Issues.date DESC',[],function(err, issuesresults){
+        if (err) 
+                return next(err);
+
+            res.render('issuesHist',{
+                issues : issuesresults
             	});
             });
         });
-        });    
-	}
+    
+}
 
 
 
@@ -45,17 +81,30 @@ exports.add = function (req, res, next) {
         var data = {
             description : input.description,
             date :input.date,
+<<<<<<< HEAD
             rank_name:input.rank_name,
+=======
+            Rank_name:input.Rank_name,
+>>>>>>> b4d517cd0837dd696935ea8eff82366c440b77b8
             reg_number:input.reg_number,
             association_id: input.association_id,
-            rank_id:input.rank_id
+            rank_id:input.rank_id,
             //start_location_latitude : input.latitude,
             //start_location_longitude :input.longitude,
             //start_location_time:input.time
+<<<<<<< HEAD
             
             //end_location_latitude:input.latitude,
             //end_location_longitude: input.longitudes,
             //end_location_time: input.time,
+=======
+            start_location_latitude : input.latitude,
+            start_location_longitude :input.longitude,
+            start_location_time:input.time,            
+            end_location_latitude:input.latitude,
+            end_location_longitude: input.longitudes,
+            end_location_time: input.time
+>>>>>>> b4d517cd0837dd696935ea8eff82366c440b77b8
             //start_location_longitude : input.latitude, 
             //end_location_id : input.latitude,
             //taxiAssociation_name : input.taxiAssociation_name,

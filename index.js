@@ -19,7 +19,6 @@ var dbOptions = {
       host: 'localhost',
       user: 'geo',
       password: 'password',
-
       port: 3306,
       database: 'geo_get'
 };
@@ -50,6 +49,9 @@ app.get('/issues/edit/:Id', issues.get);
 app.post('/issues/update/:Id', issues.update);
 app.get('/issues/search/:query', issues.issueSearch);
 app.get('/issues/delete/:Id', issues.delete);
+
+app.get('/issues/getIssues', issues.getIssues);
+// app.get('/issues/delete/:Id', issues.delete);
 
 
 // app.use(myConnection(mysql, dbOptions, 'single'));
@@ -124,7 +126,7 @@ app.post('/issues/add', function(req,res,next){
  dont type "end" use text inside "quotes" then our function route  - "function res.render('productsCategories')" will work as an exception.
  for that matter "findProductCategories" function's results/output inside routes is being parsed as"findCatNames" will be rendered */
 
-var port = process.env.port || 4000;
+var port = process.env.port || 4001;
 
 app.listen(port, function(){
 	console.log('listening on *:' + port);
